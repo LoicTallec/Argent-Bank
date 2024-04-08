@@ -1,0 +1,12 @@
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 30px auto;
+    img {
+        max-width: 150px;
+        border: 10px solid #00bc77;
+        border-radius: 50%;
+    }
+}

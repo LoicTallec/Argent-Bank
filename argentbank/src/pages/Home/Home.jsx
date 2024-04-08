@@ -1,0 +1,36 @@
+import React from "react";
+import dataFeature from "../../data/dataFeature.json";
+import Banner from "../../components/Banner/Banner";
+import Feature from "../../components/Feature/Feature";
+import iconChat from "../../assets/icon-chat.webp";
+import iconMoney from "../../assets/icon-money.webp";
+import iconSecurity from "../../assets/icon-security.webp";
+import "./home.css";
+
+function Home() {
+
+  const imageFeature = {
+    "icon-chat.webp": iconChat,
+    "icon-money.webp": iconMoney,
+    "icon-security.webp": iconSecurity
+  }
+
+  return (
+    <main>
+      <Banner />
+      <section className="features">
+        {dataFeature.map((feature) => (
+          <Feature
+            key={feature.title}
+            image={imageFeature[feature.image]}
+            alt={feature.alt}
+            title={feature.title}
+            text={feature.text}
+          />
+        ))}
+      </section>
+    </main>
+  );
+}
+
+export default Home;

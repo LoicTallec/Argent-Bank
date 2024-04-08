@@ -1,0 +1,54 @@
+.banner {
+    position: relative;
+
+    img {
+        max-height: 250px;
+        width: 100%;
+    }
+
+    figcaption {
+        position: absolute;
+        top: calc(50% - (175px / 2));
+        left: calc(50% - (250px / 2));
+        width: 300px;
+        padding: 35px 35px;
+        background: white;
+        color: #2c3e50;
+        border-radius: 5px;
+
+        .title {
+            margin: 0;
+            font-weight: 700;
+            line-height: 1.15;
+        }
+
+        .text {
+            color: #2c3e50;
+            margin-top: 20px;
+            margin-bottom: 0;
+            font-size: 13px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .banner {
+        img {
+            max-height: 400px;
+        }
+
+        figcaption {
+            height: 200px;
+            width: 320px;
+            top: calc(50% - (200px / 2));
+            left: calc(100% - 400px);
+
+            .text {
+                font-size: 16px;
+            }
+            .title {
+                font-size: 24px;
+            }
+        } 
+    }
+}

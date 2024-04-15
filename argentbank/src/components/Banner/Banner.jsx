@@ -1,17 +1,13 @@
-import dataText from "../../data/dataText.json";
-import bannerImg from "../../assets/bank-tree.webp";
+import img from "../../assets/banner.webp";
 import "./banner.css";
 
-function Banner() {
-
-  const { titleOne, titleTwo, text } = dataText[0];
+function Banner({ title, text, alt }) {
 
   return (
     <figure className="banner">
-      <img src={bannerImg} alt="pièces de monnais dans un verre" />
+      <img src={img} alt={alt} />
       <figcaption>
-        <p className="title">{titleOne}</p>
-        <p className="title">{titleTwo}</p>
+        <h3 className="title">{title}</h3>
         <p className="text">{text}</p>
       </figcaption>
     </figure>

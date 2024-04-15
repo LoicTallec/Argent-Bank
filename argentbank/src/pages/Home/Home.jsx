@@ -1,14 +1,14 @@
 import React from "react";
-import dataFeature from "../../data/dataFeature.json";
+import features from "../../data/features.json";
 import Banner from "../../components/Banner/Banner";
 import Feature from "../../components/Feature/Feature";
 import iconChat from "../../assets/icon-chat.webp";
 import iconMoney from "../../assets/icon-money.webp";
 import iconSecurity from "../../assets/icon-security.webp";
+import texts from "../../data/dataText.json";
 import "./home.css";
 
 function Home() {
-
   const imageFeature = {
     "icon-chat.webp": iconChat,
     "icon-money.webp": iconMoney,
@@ -17,9 +17,13 @@ function Home() {
 
   return (
     <main>
-      <Banner />
+      <Banner
+        title={texts.title} 
+        text={texts.text} 
+        alt={texts.alt} 
+      />
       <section className="features">
-        {dataFeature.map((feature) => (
+        {features.map((feature) => (
           <Feature
             key={feature.title}
             image={imageFeature[feature.image]}

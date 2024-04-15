@@ -1,13 +1,10 @@
-import dataText from "../../data/dataText.json";
 import "./footer.css";
 
-function Footer() {
-
-  const { footer } = dataText[1];
+function Footer({ text }) {
 
   return (
     <footer className="footer">
-      <p className="footer-text">{footer}</p>
+      <p className="footer-text">{text}</p>
     </footer>
   )
 }

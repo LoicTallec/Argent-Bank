@@ -5,7 +5,7 @@ import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+import texts from './data/dataText.json';
 import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
 
@@ -18,7 +18,7 @@ root.render(
         <Route path="/" element={<Home />} />
         <Route path="/Login" element={<Login />} />
       </Routes>
-      <Footer />
+      <Footer text={texts.footer} />
     </BrowserRouter>
   </React.StrictMode>
 );

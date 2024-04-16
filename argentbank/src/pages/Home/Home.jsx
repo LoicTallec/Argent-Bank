@@ -18,7 +18,8 @@ function Home() {
   return (
     <main>
       <Banner
-        title={texts.title} 
+        titleOne={texts.titleOne} 
+        titleTwo={texts.titleTwo}
         text={texts.text} 
         alt={texts.alt} 
       />

@@ -1,0 +1,62 @@
+.account {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #FFF;
+    margin-bottom: 40px;
+    max-width: 1500px;
+    margin: 0 auto 40px auto;
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+
+        h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 100;
+        }
+
+        b {
+            margin: 2px 0;
+            font-size: 40px;
+        }
+
+        p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        h3,
+        b,
+        p {
+            color: #2C3E50;
+        }
+    }
+
+    button {
+        margin-top: 20px;
+        background-color: #00bc77;
+        height: 45px;
+        font-size: 20px;
+        color: #FFF;
+        font-weight: 700;
+        border-bottom: 2px solid #006741;
+        border-right: 2px solid #006741;
+        border-top: 2px solid #00bc77;
+        border-left: 2px solid #00bc77;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 720px) {
+    .account {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    button {
+        width: 220px;
+    }
+}

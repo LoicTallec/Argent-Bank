@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import texts from './data/dataText.json';
 import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function App() {
 const isConnected = useSelector((state) => state.auth.isConnected);

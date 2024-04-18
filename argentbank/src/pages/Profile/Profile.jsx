@@ -8,50 +8,58 @@ import './profile.css';
 
 
 function Profil() {
-const dispatch = useDispatch();    
+const dispatch = useDispatch(); // 
 
-const user = useSelector((state) => state.auth.user);
-const [isEditing, setIsEditing] = useState(false); // État pour gérer l'affichage du formulaire
+const user = useSelector((state) => state.auth.user); // Selectionne "user" dans le reducer
+const [editing, setEditing] = useState(false); // État pour gérer l'affichage du formulaire
 
 useEffect(() => {
     dispatch(getProfile());
 }, [dispatch]);
 
-const handleEdit = (e) => {
+const edit = (e) => {
     e.preventDefault();
-    setIsEditing(true); // Mettre à jour l'état pour afficher le formulaire
-  };
+    setEditing(true); // Mettre à jour l'état pour afficher le formulaire
+};
 
-  const handleCancel = (e) => {
+const cancel = (e) => {
     e.preventDefault();
-    setIsEditing(false); // Mettre à jour l'état pour revenir au header
-  };
+    setEditing(false); // Mettre à jour l'état pour revenir au header
+};
 
-  const handleSave = async (e) => {
+const save = async (e) => {
     e.preventDefault();
     const newUserName = e.target.elements.userName.value;
     dispatch(editUserName(newUserName));
-    setIsEditing(false);
-  };
+    setEditing(false);
+};
 
     return (
         <main className='profil'>
             
-                {!isEditing ? (
+                {!editing ? (
                     <section className='profil-header'>
                     <h2>
                         Welcome back <br /> {user.firstName} {user.lastName} !  
                     </h2>
-                    <button onClick={handleEdit}>Edit</button>
+
+                        <button onClick={edit}>Edit</button>
                     </section>
                 ) : (
-                    <form onSubmit={handleSave}>
+                    <form className='profil-header' onSubmit={save}>
                         <p>Edit user name</p>
+
                         <label htmlFor="userName">User name :</label>
                         <input type="text" id="userName" defaultValue={user.userName} required />
 
+                        <label htmlFor="firstName">First name</label>
+                        <input type="text" id="firstName" defaultValue={user.firstName} disabled />
+
+                        <label htmlFor="lastName">Last name</label>
+                        <input type="text" id="lastName" defaultValue={user.lastName} disabled />
+                        
                         <button type="submit">Save</button>
-                        <button type="button" onClick={handleCancel}>Cancel</button>
+                        <button type="button" onClick={cancel}>Cancel</button>
                     </form>
                 )}
                 

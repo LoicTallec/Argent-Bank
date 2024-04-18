@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logIn } from '../../redux/auth.action';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
+import './login.css';
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -30,11 +33,16 @@ const LoginForm = () => {
   };
 
   return (
-    <div>
+    <main className='login-page'>
 
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="email">Email:</label>
+        <form className='login' onSubmit={handleSubmit}>
+          <figure className='login-top'>
+            <FontAwesomeIcon icon={faCircleUser} />
+            <h1>Sign In</h1>
+          </figure>
+          
+          <div className='form-group'>
+            <label htmlFor="email">Email :</label>
             <input
               type="text"
               id="email"
@@ -43,8 +51,8 @@ const LoginForm = () => {
               required
             />
           </div>
-          <div>
-            <label htmlFor="password">Password:</label>
+          <div className='form-group'>
+            <label htmlFor="password">Password :</label>
             <input
               type="password"
               id="password"
@@ -53,7 +61,7 @@ const LoginForm = () => {
               required
             />
           </div>
-          <div>
+          <div className='form-check'>
             <input
               type="checkbox"
               checked={rememberMe}
@@ -62,9 +70,9 @@ const LoginForm = () => {
             <label>Remember Me</label>
             
           </div>
-          <button type="submit" >Log In</button>
+          <button type="submit" className='login-button'>Sign In</button>
         </form>
-    </div>
+    </main>
   );
 };
 

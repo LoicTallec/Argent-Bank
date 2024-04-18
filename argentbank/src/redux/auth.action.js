@@ -1,11 +1,15 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+
+const BASE_URL = 'http://localhost:3001/api/v1/user/';
+const LOG_IN_URL = BASE_URL + 'login';
+const PROFILE_URL =  BASE_URL + 'profile';
+
 export const logIn = createAsyncThunk(
   'auth/logIn',
   async ({ email, password, rememberMe }, { rejectWithValue }) => {
     try {
-
-      const response = await fetch('http://localhost:3001/api/v1/user/login', {
+      const response = await fetch(LOG_IN_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -54,7 +58,7 @@ export const getProfile = createAsyncThunk(
   'auth/getProfile',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:3001/api/v1/user/profile', {
+      const response = await fetch(PROFILE_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -80,10 +84,10 @@ export const getProfile = createAsyncThunk(
 );
 
 export const editUserName= createAsyncThunk(
-  'auth/updateUserName',
+  'auth/editUserName',
   async (userName, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:3001/api/v1/user/profile', {
+      const response = await fetch(PROFILE_URL, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -93,7 +97,7 @@ export const editUserName= createAsyncThunk(
       });
 
       if (!response.ok) {
-        throw new Error('Failed to update user name');
+        throw new Error('Failed to edit user name');
       }
 
       const data = await response.json();

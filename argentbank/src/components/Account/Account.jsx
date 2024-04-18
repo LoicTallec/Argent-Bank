@@ -3,7 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-const Account = ({  title, amount, description, transaction }) => {
+const Account = ({ title, amount, description, transaction }) => {
     const navigate = useNavigate();
 
     const redirectToErrorPage = () => {

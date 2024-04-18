@@ -18,6 +18,7 @@ export const logIn = createAsyncThunk(
       });
 
       if (!response.ok) {
+        alert('Invalid email or password');
         console.log('Response is not OK:', response);
         throw new Error('Invalid email or password');
       }

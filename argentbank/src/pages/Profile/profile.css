@@ -49,6 +49,15 @@
         color: #FFF;
         font-weight: 700;
     }
+
+    .profil-buttons {
+        margin-top: 25px;
+        
+        button {
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+    }
 }
 
 @media (min-width: 1024px) {

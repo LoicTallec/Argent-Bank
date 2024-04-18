@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import { useSelector, useDispatch } from 'react-redux';
 import { getProfile, editUserName } from '../../redux/auth.action';
 import accountData from '../../data/accountData.json';
@@ -57,9 +56,10 @@ const save = async (e) => {
 
                         <label htmlFor="lastName">Last name</label>
                         <input type="text" id="lastName" defaultValue={user.lastName} disabled />
-                        
-                        <button type="submit">Save</button>
-                        <button type="button" onClick={cancel}>Cancel</button>
+                        <section className='profil-buttons'>
+                            <button type="submit">Save</button>
+                            <button type="button" onClick={cancel}>Cancel</button>
+                        </section>
                     </form>
                 )}
                 

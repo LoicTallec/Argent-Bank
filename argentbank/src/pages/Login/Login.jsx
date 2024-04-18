@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { logIn } from '../../redux/auth.action';
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,14 +17,18 @@ const LoginForm = () => {
     if (!email || !password) {
       alert('Veuillez remplir tous les champs');
       return;
-    }
+    } 
 
-    
+    try {
+      dispatch(logIn({ email, password, rememberMe }));
+      setTimeout(() => {
+        navigate('/Profile');
+      }, 500)
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-
-
-  // Affichage du formulaire et du message d'erreur
   return (
     <div>
 
@@ -46,16 +54,15 @@ const LoginForm = () => {
             />
           </div>
           <div>
-            <label>
-              <input
-                type="checkbox"
-                checked={rememberMe}
-                onChange={(e) => setRememberMe(e.target.checked)}
-              />
-              Remember Me
-            </label>
+            <input
+              type="checkbox"
+              checked={rememberMe}
+              onChange={(e) => setRememberMe(e.target.checked)}
+            />
+            <label>Remember Me</label>
+            
           </div>
-          <button type="submit">Login</button>
+          <button type="submit" >Log In</button>
         </form>
     </div>
   );

@@ -5,14 +5,12 @@ import './error.css';
 
 const Error = () => {
     return (
-        <main id='error'>
+        <main className='error'>
             <section>
-                <h2>404</h2>
+                <h2>ERROR 404</h2>
                 <p>Page not found</p>
                 <NavLink to="/">
-                    <figure>
-                        <figcaption >Back to home Page</figcaption>
-                    </figure>
+                        <h3 >Back to home Page</h3>
                 </NavLink>
             </section>
         </main>

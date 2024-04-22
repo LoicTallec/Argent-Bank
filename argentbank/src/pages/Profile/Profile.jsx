@@ -49,13 +49,26 @@ const save = async (e) => {
                         <p>Edit user name</p>
 
                         <label htmlFor="userName">User name :</label>
-                        <input type="text" id="userName" defaultValue={user.userName} required />
-
+                        <input 
+                            type="text" 
+                            id="userName" 
+                            defaultValue={user.userName} 
+                            required 
+                        />
                         <label htmlFor="firstName">First name</label>
-                        <input type="text" id="firstName" defaultValue={user.firstName} disabled />
-
+                        <input 
+                            type="text" 
+                            id="firstName" 
+                            defaultValue={user.firstName} 
+                            disabled 
+                        />
                         <label htmlFor="lastName">Last name</label>
-                        <input type="text" id="lastName" defaultValue={user.lastName} disabled />
+                        <input 
+                            type="text" 
+                            id="lastName" 
+                            defaultValue={user.lastName} 
+                            disabled 
+                        />
                         <section className='profil-buttons'>
                             <button type="submit">Save</button>
                             <button type="button" onClick={cancel}>Cancel</button>

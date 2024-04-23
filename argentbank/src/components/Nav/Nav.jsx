@@ -17,7 +17,7 @@ function Nav() {
   const handleLogout = async (e) => {
     e.preventDefault();
     dispatch(logOut());
-    navigate("/Login");
+    navigate("/login");
   };
 
   return (
@@ -28,7 +28,7 @@ function Nav() {
 
       {!isConnected ? (
         <NavLink 
-          className="main-nav-item" to={"/Login"}>
+          className="main-nav-item" to={"/login"}>
           <FontAwesomeIcon icon={faCircleUser} />
           <p>Sign In</p>
         </NavLink>
@@ -37,7 +37,7 @@ function Nav() {
           <li>
             <NavLink 
               className="nav-item" 
-              to={"/Profile"}>
+              to={"/profile"}>
                 <FontAwesomeIcon icon={faCircleUser} />
               <p>{user.userName}</p>
             </NavLink>

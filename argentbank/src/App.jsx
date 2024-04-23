@@ -18,10 +18,10 @@ const isConnected = useSelector((state) => state.auth.isConnected);
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
           <Route
-            path='/Profile' 
-            element={isConnected ? <Profile /> : <Navigate to="/Login" />}
+            path='/profile' 
+            element={isConnected ? <Profile /> : <Navigate to="/login" />}
           />
         <Route path="*" element={<Error />} />
       </Routes>

@@ -25,7 +25,7 @@ const LoginForm = () => {
     try {
       dispatch(logIn({ email, password, rememberMe }));
       setTimeout(() => {
-        navigate('/Profile');
+        navigate('/profile');
       }, 500)
     } catch (error) {
       console.error(error);

@@ -186,7 +186,6 @@ paths:
           description: Unauthorized
         '500':
           description: Internal Server Error
-
     post:
       security:
         - Bearer: []
@@ -219,7 +218,6 @@ paths:
           description: Unauthorized
         '500':
           description: Internal Server Error 
-
     delete:
       security:
         - Bearer: []
@@ -238,11 +236,12 @@ paths:
       responses:
         '204':
           description: Transaction attributes deleted successfully
+          schema:
+            $ref: '#/definitions/BasicRes'
         '401':
           description: Unauthorized
         '500':
           description: Internal Server Error
-
 securityDefinitions:
   Bearer:
     type: apiKey
@@ -313,7 +312,6 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/Transaction'
-
   Transaction:
     type: object
     properties:
@@ -325,7 +323,6 @@ definitions:
         type: number
       description:
         type: string
-
   SpecificTransaction:
     type: object
     properties:
@@ -353,3 +350,12 @@ definitions:
         type: string
       note:
         type: string
+  BasicRes:
+    properties:
+      status:
+        type: integer
+        description: status code
+      message:
+        type: string
+        description: confirm message
+  

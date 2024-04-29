@@ -1,9 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-
-
 const BASE_URL = 'http://localhost:3001/api/v1/user/';
 const LOG_IN_URL = BASE_URL + 'login';
-const PROFILE_URL =  BASE_URL + 'profile';
+const PROFILE_URL = BASE_URL + 'profile';
 
 export const logIn = createAsyncThunk(
   'auth/logIn',
@@ -45,7 +43,7 @@ export const logOut = createAsyncThunk(
   'auth/logOut',
   async (_, { rejectWithValue }) => {
     try {
-      localStorage.removeItem('token'); 
+      localStorage.removeItem('token');
       sessionStorage.removeItem('token');
 
       return null;
@@ -84,7 +82,7 @@ export const getProfile = createAsyncThunk(
   }
 );
 
-export const editUserName= createAsyncThunk(
+export const editUserName = createAsyncThunk(
   'auth/editUserName',
   async (userName, { rejectWithValue }) => {
     try {

@@ -252,6 +252,10 @@ definitions:
         type: string
       balance:
         type: number
+      transaction:  
+        type: array
+        items:
+          $ref: '#/definitions/Transaction'
 
   Transaction:
     type: object

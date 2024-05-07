@@ -11,18 +11,18 @@ import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
 
 function App() {
-const isConnected = useSelector((state) => state.auth.isConnected);
+  const isConnected = useSelector((state) => state.auth.isConnected);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/Argent-Bank'>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-          <Route
-            path='/profile' 
-            element={isConnected ? <Profile /> : <Navigate to="/login" />}
-          />
+        <Route
+          path='/profile'
+          element={isConnected ? <Profile /> : <Navigate to="/login" />}
+        />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer text={texts.footer} />
